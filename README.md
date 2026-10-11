@@ -13,4 +13,9 @@ The four achievement figures are user-provided: two companies, one internship, 5
 The contact form opens an email client and does not send or store messages in a backend. Native dialogs support keyboard navigation, Escape and backdrop close. Motion respects reduced-motion preferences. Project graphics are illustrations.
 
 ## Artwork
-`assets/builder-studio.webp` is original artwork generated using the built-in image-generation tool. Prompt: a wide monochrome cinematic maker atelier with Mumbai skyline, software laptop, suspended neural network, books, notebook, unbranded perfume and clothing details, dark central negative space for selectable HTML name typography; no people, logos or rendered text. Certificate and course record were supplied by Om Parekh.
+`assets/builder-studio-v3.webp` is original artwork generated using the built-in image-generation tool. Prompt: a wide monochrome cinematic maker atelier with Mumbai skyline, software laptop, understated desk lamp, books, notebook, unbranded perfume and clothing details, dark central negative space for selectable HTML name typography; no people, logos or rendered text. Certificate and course record were supplied by Om Parekh.
+
+## Project collection
+`catalog.js` contains 33 reviewed projects and packages, with readable names that omit day prefixes. The collection supports text search and category filters. Production domains were matched against Vercel project records on 11 October 2026; Signal uses the successful v4 deployment. Source-only projects explicitly say to run locally. Empty future repositories, forks, deployment probes, incomplete prototypes, and front-end-only drafts are excluded from this collection. The explicitly requested stock analyzer remains a selected case study with its prototype scope disclosed.
+
+Certificates appear as section 05 and timeline as section 06. Featured work uses three columns on desktop and smaller layouts on tablets and phones. Cover graphics for Code Studio and EigenRoll are code-native illustrations, not product screenshots or real attendance records.

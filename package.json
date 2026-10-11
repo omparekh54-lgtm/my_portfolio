@@ -1,1 +1,1 @@
-{"name":"om-parekh-portfolio","version":"1.0.0","private":true,"description":"Om Parekh's interactive portfolio","scripts":{"check":"node --check app.js","build":"node build.mjs"}}
+{"name":"om-parekh-portfolio","version":"1.0.0","private":true,"description":"Om Parekh's interactive portfolio","scripts":{"check":"node --check app.js && node --check catalog.js","build":"node build.mjs"}}
