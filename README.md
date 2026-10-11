@@ -1,17 +1,16 @@
 # Om Parekh — Portfolio
 
-Responsive portfolio with a procedural canvas hero, six project case studies, Python package links, ventures, education, certificates and an email-composition contact form.
+A responsive monochrome portfolio with an original illustrated builder-studio hero, subtle pointer parallax, six project case studies, four published Python packages, ventures, education, and modal certificate and contact views.
 
 ## Build
-
-No runtime dependencies. Run `npm run check` and `npm run build`. Serve `dist/` with any static host. Vercel configuration is included.
+No runtime dependencies. Run `npm run check` and `npm run build`; serve `dist/`. Vercel builds production from `main`.
 
 ## Content
+Project descriptions and scope live in `app.js`; personal details are in `index.html`. Case-study links use `#project/code-studio` style hashes. Verified Vercel domains are attached to the financial analyst, EigenRoll, StudyForge, AI Resume Checker, and SalesBuddy. Code Studio is a local application, Yobro is a PyPI library with a private source repository, and the Indian Stock Market Analyzer has no listed Vercel deployment. Its early prototype status is disclosed.
 
-Project descriptions and scope are maintained in `app.js`; personal details are in `index.html`. Case studies have shareable `#project/code-studio` style URLs. Yobro has no public repository button because the reviewed repository was private. Live URLs are shown only when present in the supplied or reviewed material. The BidArena link is recorded but not runtime-verified in this build.
+The four achievement figures are user-provided: two companies, one internship, 50+ projects and experiments, and four published libraries. Internship dates: 15 May–14 August 2026. No internship certificate is included.
 
-The contact form opens an email client; it does not store or send messages through a backend. The site respects reduced-motion preferences and uses keyboard-accessible native dialogs. Font loading uses Google Fonts with system fallbacks. All project graphics are illustrative, not application screenshots or claimed performance results.
+The contact form opens an email client and does not send or store messages in a backend. Native dialogs support keyboard navigation, Escape and backdrop close. Motion respects reduced-motion preferences. Project graphics are illustrations.
 
-## Assets
-
-Certificate and course-completion record supplied by Om Parekh. No invented portrait, testimonials, sales metrics or client logos. Internship dates use the user's correction: 15 May–14 August 2026.
+## Artwork
+`assets/builder-studio.webp` is original artwork generated using the built-in image-generation tool. Prompt: a wide monochrome cinematic maker atelier with Mumbai skyline, software laptop, suspended neural network, books, notebook, unbranded perfume and clothing details, dark central negative space for selectable HTML name typography; no people, logos or rendered text. Certificate and course record were supplied by Om Parekh.
