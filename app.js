@@ -69,15 +69,16 @@ document.querySelector('#explore-all').addEventListener('click',()=>{renderCatal
 catalogSearch.addEventListener('input',renderCatalog);
 catalogFilters.addEventListener('click',e=>{const button=e.target.closest('[data-category]');if(!button)return;catalogCategory=button.dataset.category;catalogFilters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));renderCatalog();});
 
-// Drafting-inspired cursor: native SVG for precision, a soft ring for motion.
+// Minimal studio cursor: precise dot and a smooth, understated halo.
 // Touch, text entry, reduced motion, and dialogs retain predictable interaction.
 const finePointer=matchMedia('(hover: hover) and (pointer: fine)');
 if(finePointer.matches&&!reduceMotion.matches){
  const follower=document.createElement('div');follower.className='builder-cursor';follower.setAttribute('aria-hidden','true');document.body.append(follower);
+ const dot=document.createElement('div');dot.className='studio-cursor-dot';dot.setAttribute('aria-hidden','true');document.body.append(dot);
  let targetX=0,targetY=0,cursorX=0,cursorY=0,cursorFrame=0,hasPointer=false;
  function hideCursor(){document.body.classList.remove('cursor-visible');hasPointer=false;cancelAnimationFrame(cursorFrame);cursorFrame=0;}
- function drawCursor(){cursorX+=(targetX-cursorX)*.24;cursorY+=(targetY-cursorY)*.24;follower.style.transform=`translate3d(${cursorX-20}px,${cursorY-20}px,0)`;if(Math.abs(targetX-cursorX)+Math.abs(targetY-cursorY)>.1)cursorFrame=requestAnimationFrame(drawCursor);else cursorFrame=0;}
- document.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||!finePointer.matches||reduceMotion.matches)return;const isText=e.target.closest('input,textarea,[contenteditable=true]');if(isText){hideCursor();return;}targetX=e.clientX;targetY=e.clientY;if(!hasPointer){cursorX=targetX;cursorY=targetY;hasPointer=true;}follower.classList.toggle('is-active',Boolean(e.target.closest('a,button:not(:disabled),summary,[role=button]')));document.body.classList.add('cursor-visible');if(!cursorFrame)cursorFrame=requestAnimationFrame(drawCursor);},{passive:true});
+ function drawCursor(){cursorX+=(targetX-cursorX)*.18;cursorY+=(targetY-cursorY)*.18;follower.style.transform=`translate3d(${cursorX-13}px,${cursorY-13}px,0)`;if(Math.abs(targetX-cursorX)+Math.abs(targetY-cursorY)>.1)cursorFrame=requestAnimationFrame(drawCursor);else cursorFrame=0;}
+ document.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||!finePointer.matches||reduceMotion.matches)return;const isText=e.target.closest('input,textarea,[contenteditable=true]');if(isText){hideCursor();return;}targetX=e.clientX;targetY=e.clientY;dot.style.transform=`translate3d(${targetX-2}px,${targetY-2}px,0)`;if(!hasPointer){cursorX=targetX;cursorY=targetY;hasPointer=true;}follower.classList.toggle('is-active',Boolean(e.target.closest('a,button:not(:disabled),summary,[role=button]')));dot.classList.toggle('is-active',follower.classList.contains('is-active'));document.body.classList.add('cursor-visible');if(!cursorFrame)cursorFrame=requestAnimationFrame(drawCursor);},{passive:true});
  document.addEventListener('pointerdown',()=>follower.classList.add('is-down'),{passive:true});document.addEventListener('pointerup',()=>follower.classList.remove('is-down'),{passive:true});
  document.documentElement.addEventListener('pointerleave',hideCursor);window.addEventListener('blur',hideCursor);document.addEventListener('visibilitychange',()=>{if(document.hidden)hideCursor();});finePointer.addEventListener('change',hideCursor);reduceMotion.addEventListener('change',hideCursor);
 }
